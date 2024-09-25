@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../paradig/css/style.css">
+    <script>
+        // Función de búsqueda
+        function buscarSeccion() {
+            var input = document.getElementById("buscarInput").value.toLowerCase();
+            var secciones = document.querySelectorAll("main section");
+
+            secciones.forEach(function(seccion) {
+                var texto = seccion.textContent.toLowerCase();
+                if (texto.includes(input)) {
+                    seccion.style.display = "";
+                } else {
+                    seccion.style.display = "none";
+                }
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        
+        <a href="../paradig/index.html"><img src="../paradig/Imagenes/F1.jpeg" width="200" height="150"></a>
+        <h1> Mi página de Formula 1</h1>
+        <div class="navbar">
+            <a class="active" href="../paradig/index.html">Inicio</a>
+            <a href="../paradig/view/Pilotos.html">Pilotos</a>
+            <a href="../paradig/view/Pistas.html">Pistas</a>
+            <a href="../paradig/view/Posiciones.html">Posiciones</a>
+        </div>
+        <br>
+    </header>
+    <hr>
+
+    <form onsubmit="event.preventDefault(); buscarSeccion();">
+        <!-- Busqueda con ID para usar en JS -->
+        <input type="text" id="buscarInput" placeholder="Buscar">
+        <!-- Boton para buscar -->
+        <button type="submit">Buscar</button>
+    </form>
+
+    <main>
+        <section id="novedad">
+            <h2>Franco Colapinto a la Formula 1</h2>
+            <p>En el transcurso de la mañana se conoció la noticia de que el piloto Argentino correrá lo que queda del año para la escudería de Williams.</p>
+        </section>
+        
+        <section id="Fechas">
+            <h2>Semana de Carrera </h2>
+            <p>Este fin de semana se correrá en el Gran Premio de Italia (Autodromo Nazionale Monza). Mantente informado.</p>
+        </section>
+    </main>
+    <hr>
+    
+    <footer>
+        <a href="https://www.instagram.com/exe_alde/">instagram.com/exe_alde</a>
+    </footer>
+</body>
+</html>
